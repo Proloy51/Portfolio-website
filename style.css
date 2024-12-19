@@ -321,7 +321,10 @@ span {
     padding-bottom: 20px;
     font-size: 50px;
     font-weight: 700;
-    margin-left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
 }
 
 .services {
@@ -402,7 +405,7 @@ span {
 }
 
 .skills .container {
-    background: #e1352c77;
+    background: #47474777;
     color: var(--text-color);
     border-radius: 1rem;
     padding: 2rem;
@@ -518,10 +521,12 @@ span {
 
 .education .left {
     left: 0;
+    box-shadow: 0 4px 10px var(--main-color);
 }
 
 .education .right {
     left: 50%;
+    box-shadow: 0 4px 10px var(--main-color);
 }
 
 .education .left::before {
@@ -640,8 +645,8 @@ span {
 
 
 
-
-/* Projects section */
+/* 
+/* Projects section 
 .projects {
     background: var(--bg-color);
 }
@@ -708,12 +713,233 @@ span {
         margin-top: 5px;
         width: 100%;
     }
+} */
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    margin-top: 40px;
+}
+
+.projects-title h1 {
+    font-size: 55px;
+    font-weight: 600;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    width: 80%;
+}
+
+.projects-format {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 24px;
+    border: 2px solid white;
+    gap: 15px;
+    border-radius: 20px;
+    transition: 0.4s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    max-height: 280px;
+}
+.projects-format p{
+    font-size: 15px;
+}
+.projects-format:hover{
+    transform: scale(1.1);
+    font-size: small;
+    background-image: linear-gradient(45deg, #3f0028, #59a7f6);
+    border: 2px solid #ff00ff;
+}
+
+.projects-format.expanded {
+    max-height: 300px; 
+    overflow-y: auto; 
+}
+
+
+
+.projects-format .project-link{
+    color: whitesmoke;
+    text-decoration: none; /* Optional: Removes underline */
+    transition: color 0.3s ease; /* Smooth transition */
+}
+
+.projects-format .project-link:hover {
+    color: lightblue; /* Change to your desired color */
+}
+
+
+
+.projects-header {
+    position: sticky;
+    top: 0;
+    background-color: black;
+    padding: 10px 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+}
+
+.projects-header h3, .projects-header h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.projects-desc {
+    display: block;
+}
+
+.projects-full-desc {
+    display: none;
+    margin-top: 10px;
+}
+
+.projects-format.expanded .projects-full-desc {
+    display: block;
+}
+
+.projects-readmore {
+    background: transparent;
+    color: #ff00ff;
+    font-size: 14px;
+    text-align: left;
+    margin-top: auto;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    padding: 0;
+    transition: color 0.3s;
+}
+
+.projects-readmore:hover {
+    color: #00ffff;
 }
 
 
 
 
+/* General container styles */
+.research {
+    background-color: #1e1e2f; /* Dark background */
+    padding: 40px;
+    border-radius: 10px;
+    color: #f5f5f5; /* Light text */
+    font-family: 'Arial', sans-serif;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
 
+/* Title styling */
+.research-title h1 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #e8e8e8;
+    border-bottom: 2px solid #3a3a4f; /* Bottom border for emphasis */
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+/* Research container */
+.research-container {
+    margin-top: 20px;
+}
+
+/* Research format */
+.research-format {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #28293d; /* Slightly lighter than background */
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effect */
+}
+
+/* Hover effect for each research */
+.research-format:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Research header */
+.research-header h3 {
+    font-size: 20px;
+    color: #ffc107; /* Highlighted header */
+    margin-bottom: 5px;
+}
+
+.research-header h2 {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+/* Research description */
+.research-desc, .research-full-desc {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #d3d3d3;
+}
+
+/* Full description hidden by default */
+.research-full-desc {
+    display: none;
+}
+
+/* Read more button */
+.research-readmore span {
+    /*color: #00bcd4; 
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 16px;
+    transition: color 0.3s ease;*/
+
+    background: transparent;
+    color: #ff00ff;
+    font-size: 14px;
+    text-align: left;
+    margin-top: auto;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    padding: 0;
+    transition: color 0.3s;
+}
+
+.research-readmore span:hover {
+    color: #0097a7; /* Darker teal */
+}
+
+/* Research link */
+.research-link a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 8px 15px;
+    background-color: #00bcd4;
+    color: #ffffff;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.research-link a:hover {
+    background-color: #0097a7;
+    color: #e0f7fa; /* Lighter hover text */
+}
 
 
 
@@ -875,7 +1101,7 @@ span {
     html {
         font-size: 55%;
     }
-    .services-container {
+    .projects-container {
         padding-bottom: 7rem;
         grid-template-columns: repeat(2, 1fr);
         margin: 0 5rem;
@@ -889,7 +1115,7 @@ span {
     section {
         padding: 10rem 3% 2rem;
     }
-    .services {
+    .projects {
         padding-bottom: 7rem;
     }
     .footer { 
